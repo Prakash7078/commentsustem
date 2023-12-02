@@ -1,8 +1,8 @@
 import mongoose from 'mongoose';
 const postSchema=new mongoose.Schema({
-    post:"String",
+    post:{type:String,default:"https://clubs-bucket.s3.ap-south-1.amazonaws.com/users/iron.jpg"},
     name:"String",
-    profile:"String",
+    profile:{type:String,default:"https://clubs-bucket.s3.ap-south-1.amazonaws.com/nature.jpg"},
     desc:"String",
     tags:[String],
 });

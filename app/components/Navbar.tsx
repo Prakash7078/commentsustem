@@ -11,7 +11,7 @@ function Navbar() {
       localStorage.removeItem("userInfo");
     }
   return (
-    <div className="flex justify-between py-5 px-2 items-center">
+    <div className="flex justify-between py-5 px-4 items-center">
       <h1 className="font-serif md:text-3xl text-lg font-bold">Comment System</h1>
       {!user ? (
         <Link href="/Login/">

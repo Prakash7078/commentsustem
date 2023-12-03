@@ -1,5 +1,5 @@
 "use client";
-import React, { useState, createContext, useEffect, useContext } from 'react';
+import React, { useState,useEffect} from 'react';
 import Home from './components/Home';
 import Navbar from './components/Navbar';
 
@@ -10,16 +10,8 @@ interface User {
   // ... other user properties
 }
 
-// Define a UserContextData type that includes the User | null
-interface UserContextData {
-  user: User | null;
-}
 
-export const UserContext = createContext<UserContextData>({ user: null });
 
-export const useUser = () => {
-  return useContext(UserContext);
-};
 
 export default function AppPage() {
   // Explicitly specify the type of the 'user' state variable
@@ -38,9 +30,9 @@ export default function AppPage() {
   }, []);
 
   return (
-    <UserContext.Provider value={{ user }}>
-      <Navbar />
-      <Home />
-    </UserContext.Provider>
+    <div >
+      <Navbar user={user }/>
+      <Home/>
+    </div>
   );
 }

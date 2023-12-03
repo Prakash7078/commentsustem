@@ -1,9 +1,8 @@
 "use client";
-import { useState, useEffect, useContext } from 'react';
+import { useState, useEffect } from 'react';
 import { AiOutlineHeart } from 'react-icons/ai';
 import { FcComments } from 'react-icons/fc';
 import { BsFillSendFill } from 'react-icons/bs';
-import { UserContext } from '../page';
 import Post from './Post';
 import { useRouter } from 'next/navigation';
 import { MdDelete } from "react-icons/md";
@@ -45,9 +44,7 @@ export default function Home() {
   const [data, setData] = useState<Data>({ desc: '', itemid: '', msgs: [] });
   const [msgdata, setMsgdata] = useState<MsgData>({ _id: '', desc: '', itemid: '' });
   const [comments, setComments] = useState<Comment[]>([]);
-  const user = useContext(UserContext);
   const router=useRouter();
-  console.log("user",user);
   useEffect(() => {
     const fetchData = async () => {
       try {

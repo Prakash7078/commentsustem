@@ -1,7 +1,10 @@
 "use client";
 import React, { ChangeEvent, useState } from 'react'
-
-export default function Post({ value, setAddpost }) {
+interface PostProps {
+    value: boolean;
+    setAddpost: React.Dispatch<React.SetStateAction<boolean>>;
+  }
+export default function Post({ value, setAddpost }: PostProps) {
 
     // eslint-disable-next-line react-hooks/rules-of-hooks
     const[data,setData]=useState<{username:string;desc: string; tags:string }>({username:"",desc:"",tags:""});

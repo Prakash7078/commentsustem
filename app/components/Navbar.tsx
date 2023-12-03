@@ -1,12 +1,15 @@
-import React, { useContext, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import { FiLogOut } from 'react-icons/fi';
 import Link from 'next/link';
-import { UserContext } from '../page';
-
-
-function Navbar() {
-    const user = useContext(UserContext);
-    console.log("user",user);
+interface User {
+  name: string;
+  password: string;
+  // ... other user properties
+}
+interface NavbarProps {
+  user: User | null;
+}
+function Navbar({ user }: NavbarProps) {
     const handleLogout=()=>{
       localStorage.removeItem("userInfo");
     }
